@@ -18,11 +18,12 @@ public class AvaliacaoController {
     AvaliacaoService avaliacaoService;
 
     @GetMapping
-    public ResponseEntity<List<Avaliacao>> getAll(){
+    public ResponseEntity<List<Avaliacao>> getAll() {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Listar avaliaçoes", "Retorna a lista de avaliaçoes");
         return new ResponseEntity<>(avaliacaoService.listar(), HttpStatus.ACCEPTED);
     }
+
     @PostMapping
     public ResponseEntity<Avaliacao> cadastro(@RequestBody Avaliacao avaliacao) {
         HttpHeaders headers = new HttpHeaders();

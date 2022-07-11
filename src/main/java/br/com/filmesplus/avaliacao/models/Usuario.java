@@ -13,23 +13,19 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String nome;
     @Column(unique = true)
     private String email;
-    private String senha;
+    @Column(unique = true)
+    private String username;
+    @Column(name = "senha")
+    private String password;
 
-    public Usuario(Long id, String nome, String email, String senha) {
-        this.id = id;
+    public Usuario(String nome, String email, String username, String password) {
         this.nome = nome;
         this.email = email;
-        this.senha = senha;
-    }
-
-    public Usuario(String nome, String email, String senha) {
-        this.nome = nome;
-        this.email = email;
-        this.senha = senha;
+        this.username = username;
+        this.password = password;
     }
 
     public Usuario() {

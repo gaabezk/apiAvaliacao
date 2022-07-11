@@ -16,7 +16,8 @@ public class AvaliacaoService {
     public List<Avaliacao> listar() {
         return avaliacaoRepo.findAll();
     }
-    public Avaliacao criar(Avaliacao avaliacao){
-        return  avaliacaoRepo.save(avaliacao);
+
+    public Avaliacao criar(Avaliacao avaliacao) {
+        return avaliacaoRepo.save(avaliacao);
     }
 }
