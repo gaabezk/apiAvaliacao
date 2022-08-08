@@ -26,12 +26,4 @@ public class UsuarioController {
         return ResponseEntity.ok(usuarioService.salvar(usuario));
     }
 
-    @PostMapping("/valid")
-    public ResponseEntity<Boolean> validarSenha(@RequestParam String username,
-                                                @RequestParam String senha) {
-
-        boolean valid = (usuarioService.validarSenha(username, senha));
-        HttpStatus status = (valid) ? HttpStatus.UNAUTHORIZED : HttpStatus.OK;
-        return ResponseEntity.status(status).body(valid);
-    }
 }
