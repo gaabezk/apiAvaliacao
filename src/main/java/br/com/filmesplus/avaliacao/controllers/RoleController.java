@@ -17,7 +17,7 @@ public class RoleController {
     RoleService roleService;
 
     @PostMapping
-    public ResponseEntity<Role> criar(@RequestBody Role role){
+    public ResponseEntity<Role> criar(@RequestBody Role role) {
         return ResponseEntity.ok(roleService.criar(role));
     }
 

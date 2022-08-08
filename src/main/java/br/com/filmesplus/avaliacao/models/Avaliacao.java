@@ -22,6 +22,7 @@ public class Avaliacao {
 
     public Avaliacao() {
     }
+
     public Avaliacao(Long id, String nota, String nomeFilme, String idFilme, Usuario usuario) {
         this.id = id;
         this.nota = nota;

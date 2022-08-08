@@ -32,6 +32,7 @@ public class Usuario {
 
     public Usuario() {
     }
+
     public Usuario(Long id, String nome, String email, String senha, Role role, List<Avaliacao> avaliacoes) {
         this.id = id;
         this.nome = nome;
@@ -40,4 +41,5 @@ public class Usuario {
         this.role = role;
         this.avaliacoes = avaliacoes;
     }
+
 }

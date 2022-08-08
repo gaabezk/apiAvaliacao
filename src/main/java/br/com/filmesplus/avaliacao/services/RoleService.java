@@ -13,12 +13,12 @@ public class RoleService {
     @Autowired
     RoleRepo roleRepo;
 
-    public Role criar(Role role){
+    public Role criar(Role role) {
         Optional<Role> optional = roleRepo.findByNome(role.getNome());
-        if(optional.isPresent()){
+        if (optional.isPresent()) {
             throw new Error("Role já existe!");
         }
-       return roleRepo.save(role);
+        return roleRepo.save(role);
     }
 
 

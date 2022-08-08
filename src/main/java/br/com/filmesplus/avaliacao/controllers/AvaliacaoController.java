@@ -1,7 +1,6 @@
 package br.com.filmesplus.avaliacao.controllers;
 
 import br.com.filmesplus.avaliacao.models.Avaliacao;
-import br.com.filmesplus.avaliacao.models.Usuario;
 import br.com.filmesplus.avaliacao.services.AvaliacaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -24,6 +23,7 @@ public class AvaliacaoController {
         headers.add("Listar avaliaçoes", "Retorna a lista de avaliaçoes");
         return new ResponseEntity<>(avaliacaoService.listar(), HttpStatus.ACCEPTED);
     }
+
     @PostMapping
     public ResponseEntity<Avaliacao> salvar(@RequestBody Avaliacao avaliacao) {
         return ResponseEntity.ok(avaliacaoService.criar(avaliacao));
