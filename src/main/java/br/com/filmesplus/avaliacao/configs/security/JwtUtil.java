@@ -16,8 +16,8 @@ public class JwtUtil {
     @Value("${auth.jwt-expiration-miliseg}")
     private Long jwtExpirationMiliseg;
 
-    public String generateToken(String username) {
-        return Jwts.builder().setSubject(username)
+    public String generateToken(String colecao) {
+        return Jwts.builder().setSubject(colecao)
                 .setExpiration(new Date(System.currentTimeMillis() + this.jwtExpirationMiliseg))
                 .signWith(SignatureAlgorithm.HS512, this.jwtSecret.getBytes()).compact();
     }

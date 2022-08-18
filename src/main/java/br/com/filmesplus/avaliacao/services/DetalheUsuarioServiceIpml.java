@@ -26,6 +26,7 @@ public class DetalheUsuarioServiceIpml implements UserDetailsService {
             throw new UsernameNotFoundException("Email " + username + " Não encontrado");
         }
 
-        return new UsuarioDetalhe(usuario);
+        return new UsuarioDetalhe(usuario,String.format("%s-%s-%s-%s",usuario.get().getId(), usuario.get().getNome(), usuario.get().getEmail(), usuario.get().getRole().getNome()));
+
     }
 }

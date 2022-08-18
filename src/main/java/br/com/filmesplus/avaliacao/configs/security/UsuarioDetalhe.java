@@ -1,6 +1,7 @@
 package br.com.filmesplus.avaliacao.configs.security;
 
 import br.com.filmesplus.avaliacao.models.Usuario;
+import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,12 +11,16 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
+@Getter
 public class UsuarioDetalhe implements UserDetails {
 
     private Optional<Usuario> usuario;
 
-    public UsuarioDetalhe(Optional<Usuario> usuario) {
+    private String colecao;
+
+    public UsuarioDetalhe(Optional<Usuario> usuario, String colecao) {
         this.usuario = usuario;
+        this.colecao = colecao;
     }
 
     @Override

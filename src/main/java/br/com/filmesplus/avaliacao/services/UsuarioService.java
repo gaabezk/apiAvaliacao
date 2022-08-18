@@ -27,4 +27,9 @@ public class UsuarioService {
         return repo.save(usuario);
     }
 
+    public Usuario cadastro(Usuario usuario) {
+        usuario.setSenha(encoder.encode(usuario.getSenha()));
+        return repo.save(usuario);
+    }
+
 }
